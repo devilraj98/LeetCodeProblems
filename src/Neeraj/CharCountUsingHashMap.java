@@ -1,5 +1,6 @@
 package Neeraj;
 
+import java.security.KeyStore;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -8,36 +9,20 @@ public class CharCountUsingHashMap {
 
     private static void characterCount(String str) {
 
-        HashMap<Character,Integer> hm = new HashMap<>();
-        char arr[] =str.toCharArray();
+      HashMap<Character,Integer> hmap =new HashMap<>();
+      char arr[] =str.toCharArray();
 
         for (char c:arr) {
-            if(hm.containsKey(c))
-                hm.put(c,hm.get(c)+1);
-            else
-                hm.put(c,1);
+            if(hmap.containsKey(c))
+                hmap.put(c,hmap.get(c)+1);
+                else
+                    hmap.put(c,1);
+
         }
+        for (Map.Entry entry : hmap.entrySet()) {
+            System.out.println(entry.getKey()+" "+entry.getValue());
 
-      /*  for (char key : hm.keySet()) {
-            System.out.println(key);;
         }
-     */
-
-   /*     System.out.println();
-
-        Iterator<Character> itr = hm.keySet().iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next()+" ");
-        }
-*/
-    /*    System.out.println();
-
-        hm.keySet().iterator()
-                .forEachRemaining(System.out::println);
-*/
-        System.out.println();
-        for (Map.Entry entry : hm.entrySet())
-            System.out.println(entry.getKey()+"  "+entry.getValue());
 
     }
 
