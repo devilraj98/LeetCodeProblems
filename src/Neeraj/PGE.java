@@ -9,7 +9,7 @@ public class PGE {
         int []ans = new int[n];
         for (int i = 0; i < n; i++) {
 
-            while(!stk.isEmpty() && stk.peek()<arr[i])
+            while(!stk.isEmpty() && arr[stk.peek()] <= arr[i])
             {
                 stk.pop();
             }
@@ -19,8 +19,9 @@ public class PGE {
             else
                 ans[i] =stk.peek();
 
-            stk.push(arr[i]);
+            stk.push(i);
         }
+
     return ans;
 
 
